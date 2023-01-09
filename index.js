@@ -13,7 +13,7 @@ server.listen(process.env.PORT, () => {
 });
 
 const sqlConfig = {
- user: 'usuario',
+  user: 'usuario',
   password: 'pass',
   database: 'DB',
   server: 'localhost',
