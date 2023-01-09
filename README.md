@@ -1,10 +1,10 @@
-#Plantilla de Node
-##Instalar dependencias
+# Plantilla de Node
+## Instalar dependencias
 ````
 npm i
 ````
 
-##Iniciar servicio en modo desarollo
+## Iniciar servicio en modo desarollo
 ````
 npm run dev
 ````
