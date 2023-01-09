@@ -12,7 +12,8 @@ server.listen(process.env.PORT, () => {
   conectar();
 });
 
-const sqlConfig = {user: 'usuario',
+const sqlConfig = {
+  user: 'usuario',
   password: 'pass',
   database: 'DB',
   server: 'localhost',
