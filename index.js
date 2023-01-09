@@ -29,6 +29,7 @@ const sqlConfig = {
 }
 
 const conectar = async () => {
+  
   try {
     await mssql.connect(sqlConfig);
     await mssql.query('Select 1 + 1;');
