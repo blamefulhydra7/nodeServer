@@ -7,7 +7,9 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.listen(process.env.PORT, () => {
+const PORT = 3000;
+
+server.listen(PORT, () => {
   console.log('Server iniciado.');
   conectar();
 });
@@ -16,7 +18,7 @@ const sqlConfig = {
   user: 'usuario',
   password: 'pass',
   database: 'DB',
-  server: 'localhost',
+  server: 'BLAMEFULHYDRA7\DEV2019',
   pool: {
       max: 10,
       min: 0,
@@ -29,7 +31,6 @@ const sqlConfig = {
 }
 
 const conectar = async () => {
-  
   try {
     await mssql.connect(sqlConfig);
     await mssql.query('Select 1 + 1;');
