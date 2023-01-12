@@ -1,3 +1,3 @@
 export const home = (req, res) => {
-    return res.sendStatus()
+    return res.sendStatus(200);
 }
