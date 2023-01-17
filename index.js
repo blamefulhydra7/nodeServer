@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import mssql from 'mssql';
-import { home } from './routes/index.js';
+import { home, todoList } from './routes/index.js';
 
 const server = express();
 server.use(cors());
@@ -15,10 +15,11 @@ server.listen(PORT, () => {
 });
 
 const sqlConfig = {
-  user: 'usuario',
-  password: 'pass',
-  database: 'DB',
-  server: 'BLAMEFULHYDRA7\DEV2019',
+  user: 'sa',
+  password: 'root',
+  database: 'AngularApp',
+  server: 'localhost\\DEV2019',
+  port: 1433,
   pool: {
       max: 10,
       min: 0,
@@ -37,7 +38,9 @@ const conectar = async () => {
     console.log('Conexión a DB exitosa.');
   } catch (error) {
     console.log('Conexión a DB errónea.');
+    console.log(error);
   }
 }
 
 server.use('/api/v1', home);
+server.use('/api/v1/todoList', todoList);
