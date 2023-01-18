@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { getPreguntas } from '../controllers/todoListController.js';
+import { getTareas, addTarea } from '../controllers/todoListController.js';
 
 const router = Router();
 
-router.get('/', (req, res) => getPreguntas(req, res));
+router.get('/', (req, res) => getTareas(req, res));
+
+router.post('/', (req, res) => addTarea(req, res));
 
 export default router;
