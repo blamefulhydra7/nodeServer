@@ -24,7 +24,6 @@ export const conectar = async () => {
       console.log('Conexión a DB exitosa.');
   } catch (error) {
       console.log('Conexión a DB errónea.');
-      console.log(error);
   }
 }
 

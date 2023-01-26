@@ -16,10 +16,12 @@ class Socket {
         console.log('Empiezo a escuchar socket.');
         this.io.on('connection', (socket) => {
 
-            console.log('Cliente conectado');
-            
-            this.io.on('disconnect', (socket) => {
-                console.log('cliente desconectado');
+            socket.on('login', ({sala}) => {
+                socket.join(sala);
+            });
+
+            socket.on('mensaje', (mensaje) => {
+                this.io.to(mensaje.sala).emit('mensaje', mensaje);
             });
         })
 
